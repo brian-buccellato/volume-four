@@ -1,12 +1,22 @@
-import React from "react";
 import "./App.scss";
+
+import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+
+import Admin from "./components/Admin/Admin";
 import Navbar from "./components/Navbar/Navbar";
+
 class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <Navbar />
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Navbar />
+          <Switch>
+            <Route path="/admin" component={Admin} />
+          </Switch>
+        </div>
+      </BrowserRouter>
     );
   }
 }
