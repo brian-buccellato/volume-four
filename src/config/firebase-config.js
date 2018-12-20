@@ -16,3 +16,11 @@ firebase.initializeApp(config);
 firebase.firestore().settings({ timestampsInSnapshots: true });
 
 export default firebase;
+
+/**
+ * create components for image upload
+ * input type of file - needs on change handler for chosen file
+ * button upload - on click
+ * upload storage from firebase configuration
+ * storage.ref('foldername/imagename/').put(image)
+ */
