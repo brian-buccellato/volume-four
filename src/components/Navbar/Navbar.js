@@ -1,5 +1,6 @@
 import "./Navbar.scss";
 import React from "react";
+import { NavLink } from "react-router-dom";
 import M from "materialize-css/dist/js/materialize";
 
 class Navbar extends React.Component {
@@ -39,33 +40,36 @@ class Navbar extends React.Component {
       <div>
         <ul id="slide-out" className="sidenav">
           <li>
-            <a
+            <NavLink
+              to="/"
               name="photos"
               className="nav-link"
               onClick={this.handleSideNavSelect}
             >
               {photos}
-            </a>
+            </NavLink>
           </li>
 
           <li>
-            <a
+            <NavLink
+              to="/"
               name="contact"
               className="nav-link"
               onClick={this.handleSideNavSelect}
             >
               {contact}
-            </a>
+            </NavLink>
           </li>
 
           <li>
-            <a
+            <NavLink
+              to="/"
               name="samples"
               className="nav-link"
               onClick={this.handleSideNavSelect}
             >
               {samples}
-            </a>
+            </NavLink>
           </li>
         </ul>
         <nav className="nav-wrapper black nav-text">
@@ -83,13 +87,19 @@ class Navbar extends React.Component {
             </a>
             <ul className="right hide-on-med-and-down">
               <li>
-                <a className="nav-link">{photos}</a>
+                <NavLink to="/" className="nav-link">
+                  {photos}
+                </NavLink>
               </li>
               <li>
-                <a className="nav-link">{contact}</a>
+                <NavLink to="/" className="nav-link">
+                  {contact}
+                </NavLink>
               </li>
               <li>
-                <a className="nav-link">{samples}</a>
+                <NavLink to="/" className="nav-link">
+                  {samples}
+                </NavLink>
               </li>
             </ul>
           </div>
