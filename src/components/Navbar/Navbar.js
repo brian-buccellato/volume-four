@@ -41,7 +41,7 @@ class Navbar extends React.Component {
         <ul id="slide-out" className="sidenav">
           <li>
             <NavLink
-              to="/"
+              to="/photos"
               name="photos"
               className="nav-link"
               onClick={this.handleSideNavSelect}
@@ -52,7 +52,7 @@ class Navbar extends React.Component {
 
           <li>
             <NavLink
-              to="/"
+              to="/contact"
               name="contact"
               className="nav-link"
               onClick={this.handleSideNavSelect}
@@ -63,7 +63,7 @@ class Navbar extends React.Component {
 
           <li>
             <NavLink
-              to="/"
+              to="/samples"
               name="samples"
               className="nav-link"
               onClick={this.handleSideNavSelect}
@@ -87,17 +87,17 @@ class Navbar extends React.Component {
             </a>
             <ul className="right hide-on-med-and-down">
               <li>
-                <NavLink to="/" className="nav-link">
+                <NavLink to="/photos" className="nav-link">
                   {photos}
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/" className="nav-link">
+                <NavLink to="/contact" className="nav-link">
                   {contact}
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/" className="nav-link">
+                <NavLink to="/samples" className="nav-link">
                   {samples}
                 </NavLink>
               </li>
