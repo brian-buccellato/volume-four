@@ -1,5 +1,8 @@
 import "./PhotoUpload.scss";
 import React from "react";
+
+import M from "materialize-css/dist/js/materialize";
+
 import { connect } from "react-redux";
 import { uploadPhoto } from "../../store/actions/uploadActions";
 
@@ -8,44 +11,45 @@ class PhotoUpload extends React.Component {
     super(props);
     this.handleFileSelect = this.handleFileSelect.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.handlePathSelect = this.handlePathSelect.bind(this);
+
     this.state = {
       image: "",
-      path: "test-images"
+      path: "",
+      uploadError: null
     };
   }
 
   handleFileSelect = e => {
     if (e.target.files[0]) {
-      this.setState({ image: e.target.files[0] });
+      this.setState({ image: e.target.files[0], path: this.props.storagePath });
     }
   };
 
   handleSubmit = e => {
     e.preventDefault();
     this.props.upload(this.state);
+    M.toast({ html: "File uploaded successfully" });
   };
   render() {
-    console.log(this.state);
     return (
       <div className="row">
         <div className="col s12 m12 l12">
           <div className="card black">
             <div className="card-content amber-text left-align">
               <div className="file-field input-field">
-                <div className="btn amber">
+                <div className="btn amber waves-effect">
                   <span>Choose</span>
                   <input onChange={this.handleFileSelect} type="file" />
                 </div>
                 <div className="file-path-wrapper">
                   <input
                     style={{ color: "white" }}
-                    className="file-path validate"
+                    className="file-path"
                     type="text"
                   />
                 </div>
               </div>
-              <a className="btn amber" onClick={this.handleSubmit}>
+              <a className="btn amber waves-effect" onClick={this.handleSubmit}>
                 <i className="material-icons left">backup</i>upload
               </a>
             </div>
