@@ -6,8 +6,26 @@ class Admin extends React.Component {
   render() {
     return (
       <div>
-        <Card cardTitle={"Photo Upload"} cardContent={"Upoload something"} />
-        <PhotoUpload />
+        <Card
+          cardTitle={"Header Photo Upload"}
+          cardContent={"Select a photo to use for thee site header"}
+        />
+        <PhotoUpload storagePath={"header-image"} />
+        <Card
+          cardTitle={"Gallery Photo Upload"}
+          cardContent={"Select a photo to add to the site gallery"}
+        />
+        <PhotoUpload storagePath={"photo-gallery"} />
+        <Card
+          cardTitle={"Tile Photo Upload"}
+          cardContent={"Select a photo to use for a tile"}
+        />
+        <PhotoUpload storagePath={"tile-images"} />
+        <Card
+          cardTitle={"Jukebox Upload"}
+          cardContent={"Select a song to add to the site jukebox"}
+        />
+        <PhotoUpload storagePath={"jukebox"} />
       </div>
     );
   }

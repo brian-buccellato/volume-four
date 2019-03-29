@@ -9,7 +9,7 @@ class Card extends React.Component {
     return (
       <div className="row">
         <div className="col s12 m12 l12">
-          <div className="card black">
+          <div className="card black composite">
             <div className="card-content amber-text left-align">
               <div className="card-title left-align">
                 {this.props.cardTitle}
