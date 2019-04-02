@@ -1,6 +1,6 @@
 import "./Navbar.scss";
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect, Link } from "react-router-dom";
 import M from "materialize-css/dist/js/materialize";
 
 class Navbar extends React.Component {
@@ -27,7 +27,6 @@ class Navbar extends React.Component {
   }
 
   handleSideNavSelect(e) {
-    e.preventDefault();
     const instance = this.state.sideNavInstance;
     instance.close();
   }
