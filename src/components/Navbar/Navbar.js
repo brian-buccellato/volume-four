@@ -1,12 +1,13 @@
 import "./Navbar.scss";
 import React from "react";
-import { NavLink, Redirect, Link } from "react-router-dom";
+import { NavLink, Redirect, Link, withRouter } from "react-router-dom";
 import M from "materialize-css/dist/js/materialize";
 
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
     this.handleSideNavSelect = this.handleSideNavSelect.bind(this);
+    this.handleLogoClick = this.handleLogoClick.bind(this);
     this.state = {
       sideNavInstance: null
     };
@@ -24,6 +25,10 @@ class Navbar extends React.Component {
         sideNavInstance: instance
       });
     });
+  }
+
+  handleLogoClick() {
+    this.props.history.push("/");
   }
 
   handleSideNavSelect(e) {
@@ -74,7 +79,12 @@ class Navbar extends React.Component {
         <nav className="nav-wrapper black nav-text">
           <div className="container">
             <div className="brand-logo left" style={{ position: "relative" }}>
-              Volume IV
+              <div className="nav-img-container" onClick={this.handleLogoClick}>
+                <img
+                  className="logo-img"
+                  src="https://firebasestorage.googleapis.com/v0/b/volume-iv.appspot.com/o/header-image%2FvolFourLogo.jpg?alt=media&token=5ccfcc89-603a-4e84-93d3-25c4fdf47aaf"
+                />
+              </div>
             </div>
             <a
               className="sidenav-trigger nav-link right"
@@ -108,4 +118,4 @@ class Navbar extends React.Component {
   }
 }
 
-export default Navbar;
+export default withRouter(Navbar);

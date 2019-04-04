@@ -26,6 +26,11 @@ class Admin extends React.Component {
           cardContent={"Select a song to add to the site jukebox"}
         />
         <PhotoUpload storagePath={"jukebox"} />
+        <Card
+          cardTitle={"Side-Nav Upload"}
+          cardContent={"Select an image to use for the  side nav"}
+        />
+        <PhotoUpload storagePath={"side-nav"} />
       </div>
     );
   }
